@@ -1,0 +1,97 @@
+
+body {
+    background: radial-gradient(circle at center, #313030, #0d0d0d);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1, h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00ffe0;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 255, 224, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: #00ffe0;
+}
+
+th {
+    background-color: rgba(0, 255, 224, 0.2);
+    font-size: 1.2rem;
+}
+
+td {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+tr:hover {
+    background-color: rgba(0, 255, 224, 0.1);
+}
+
+a {
+    color: #00ffe0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff00ff; 
+}
+
+button {
+    background-color: #00ffe0;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ff00ff;
+}
+
+input, select {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #00ffe0;
+    border: 2px solid #00ffe0;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #ff00ff;
+    outline: none;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 255, 224, 0.3);
+}

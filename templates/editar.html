@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Editar Inscripción</h1>
+
+    <form method="POST">
+        <label>Fecha:</label>
+        <input type="date" name="fecha" value="{{ inscrito['fecha'] }}" required><br>
+
+        <label>Nombre:</label>
+        <input type="text" name="nombre" value="{{ inscrito['nombre'] }}" required><br>
+
+        <label>Apellidos:</label>
+        <input type="text" name="apellidos" value="{{ inscrito['apellidos'] }}" required><br>
+
+        <label>Turno:</label>
+        <select name="turno">
+            <option value="mañana" {% if inscrito['turno'] == 'mañana' %}selected{% endif %}>Mañana</option>
+            <option value="tarde" {% if inscrito['turno'] == 'tarde' %}selected{% endif %}>Tarde</option>
+            <option value="noche" {% if inscrito['turno'] == 'noche' %}selected{% endif %}>Noche</option>
+        </select><br>
+
+        <label>Seminario:</label>
+        <input type="text" name="seminario" value="{{ inscrito['seminario'] }}" required><br>
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>

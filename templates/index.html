@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Seminarios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Registro de Seminarios</h1>
+
+    <form method="POST">
+        <h3>Datos de inscripción</h3>
+        <label>Fecha:</label>
+        <input type="date" name="fecha" required><br>
+
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required><br>
+
+        <label>Apellidos:</label>
+        <input type="text" name="apellidos" required><br>
+
+        <label>Turno:</label>
+        <select name="turno">
+            <option value="mañana">Mañana</option>
+            <option value="tarde">Tarde</option>
+            <option value="noche">Noche</option>
+        </select><br>
+
+        <h3>Seminarios disponibles</h3>
+        <select name="seminario">
+            {% for seminario in seminarios_disponibles %}
+                <option value="{{ seminario }}">{{ seminario }}</option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

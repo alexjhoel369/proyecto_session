@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Inscritos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Listado de Inscritos</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Turno</th>
+            <th>Seminario</th>
+            <th>Acciones</th>
+        </tr>
+        {% for inscrito in inscritos %}
+        <tr>
+            <td>{{ inscrito['id'] }}</td>
+            <td>{{ inscrito['fecha'] }}</td>
+            <td>{{ inscrito['nombre'] }}</td>
+            <td>{{ inscrito['apellidos'] }}</td>
+            <td>{{ inscrito['turno'] }}</td>
+            <td>{{ inscrito['seminario'] }}</td>
+            <td>
+                <a href="{{ url_for('editar', id=inscrito['id']) }}">Editar</a> |
+                <a href="{{ url_for('eliminar', id=inscrito['id']) }}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Nuevo</a>
+</body>
+</html>
